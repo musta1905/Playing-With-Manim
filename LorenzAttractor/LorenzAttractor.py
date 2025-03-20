@@ -1,8 +1,11 @@
 from manimlib import *
-from scipy.integrate import odeint
 from scipy.integrate import solve_ivp
 
-def lorenz_system(t, state, sigma=10, rho=28, beta=8 / 3):
+sigma = 10
+rho = 28
+beta = 8 / 3
+
+def lorenz_system(t, state):
     x, y, z = state
     dxdt = sigma * (y - x)
     dydt = x * (rho - z) - y
@@ -28,19 +31,28 @@ class LorenzAttractor(InteractiveScene):
             height=16,
             depth=8
         )
-
         axes.set_width(FRAME_WIDTH)
         axes.center()
-
         self.frame.reorient(43, 76, 1, IN, 10)
         self.add(axes)
-        epsilon = 0.001
-        evolution_time = 30
+
+        equation = Tex(R'''\begin{aligned}
+            & \frac{d x}{d t}=\sigma(y-x) \\
+            & \frac{d y}{d t}=x(p-z)-y \\
+            & \frac{d x}{d t}=x y-\beta x .
+            \end{aligned}''')
+        equation.set_color(TEAL)
+        equation.fix_in_frame()
+        equation.to_corner(UL)
+        self.add(equation)
+
+        epsilon = 0.1
+        evolution_time = 12
         states = [
-            [10, 10, 10 + n*epsilon]
+            [10, 10 + n*epsilon, 10 ]
                   for n in range(10)]
-        colors = color_gradient([BLUE, YELLOW], len(states))
         
+        colors = color_gradient([RED, BLUE, YELLOW], len(states))
 
         curves = VGroup()
         for state, color in zip(states, colors):
@@ -58,7 +70,7 @@ class LorenzAttractor(InteractiveScene):
         
         dots.add_updater(update_dots)
         tails = VGroup(
-            TracingTail(dot, time_traced= 3).match_color(dot)
+            TracingTail(dot, time_traced= 5).match_color(dot)
             for dot in dots
         )
 
@@ -66,9 +78,10 @@ class LorenzAttractor(InteractiveScene):
         self.add(tails)
         curves.set_opacity(0)
         self.play(*(
-            ShowCreation(curve, rate_func= linear)
+            ShowCreation(curve
+                         , rate_func= linear)
             for curve in curves
             ),
             self.frame.animate.reorient(270, 72, 0, IN, 10), 
-            run_time=evolution_time
+            run_time = evolution_time
         )
