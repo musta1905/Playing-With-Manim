@@ -47,7 +47,7 @@ class LorenzAttractor(InteractiveScene):
         self.add(equation)
 
         epsilon = 0.1
-        evolution_time = 12
+        evolution_time = 30
         states = [
             [10, 10 + n*epsilon, 10 ]
                   for n in range(10)]
