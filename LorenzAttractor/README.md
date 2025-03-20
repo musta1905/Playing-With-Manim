@@ -1,10 +1,21 @@
+
 # Lorenz Attractor In Manim!!!
 
-https://github.com/user-attachments/assets/feaff17d-ac05-4819-a49f-32ebcbd7e7f2
+![LorenzAttractor](https://github.com/user-attachments/assets/d6ccd62a-8645-49c9-a6e1-8342eb126519)
 
-## First Things First
-Hello! This is a animation made in ManimGL (Not Community Edition) created by Grant Sanderson popularly known as [3Blue1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw).
+
+## Lorenz Attractor
+The [Lorenz attractor](https://en.wikipedia.org/wiki/Lorenz_system) is a strange attractor living in 3D space that relates three parameters arising in fluid dynamics. It is one of the Chaos theory's most iconic images and illustrates the phenomenon now known as the [Butterfly effect](https://en.wikipedia.org/wiki/Butterfly_effect) or (more technically) sensitive dependence on initial conditions.
+
+This is made in ManimGL not ManimCE.
+
 ## To Run This Program :
-1. You need to have python installed.
-2. To install ManimGL follow the steps given in here: [3b1b/manim](https://github.com/3b1b/manim).
-3. Run <code>LorenzAttractor.py</code>.
+1. Follow the step to install manimgl and other requirements in [here](https://github.com/musta1905/Playing-With-Manim/blob/main/README.md).
+2. Download <code>LorenzAttractor.py</code>.
+3. To run it the enter the command in the following format into terminal:
+```
+manimgl LorenzAttractor.py LorenzAttractor
+```
+**Have Fun !!!**
+
+
