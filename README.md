@@ -22,10 +22,10 @@ System requirements are：
 ### Installing On Windows : 
 1. [Install FFmpeg](https://www.wikihow.com/Install-FFmpeg-on-Windows) , and make sure that its path is in the PATH environment variable.
 2. For creating virtual python environment using [uv](https://docs.astral.sh/uv/) ( its really good!!! ) and install manim follow the steps [here](https://docs.manim.community/en/stable/installation/uv.html) .
-3. Change <code>uv add manim</code> to <code>uv add manimgl</code> if you are using manimgl.
+3. Change <code>uv add manim</code> to <code>uv add manimgl</code> if you want to use manimgl.
 
 ### Installing on Linux or MacOS :
-I don't really know **¯\_(ツ)_/¯** , it never worked for me see the installation documentation for [manimCE](https://docs.manim.community/en/stable/installation.html) or [manimgl](https://3b1b.github.io/manim/getting_started/installation.html#).
+I don't really know **¯\_(ツ)_/¯** , it never worked for me. See the installation documentation for [manimCE](https://docs.manim.community/en/stable/installation.html) or [manimgl](https://3b1b.github.io/manim/getting_started/installation.html#).
 
 ## Running Manim
 
